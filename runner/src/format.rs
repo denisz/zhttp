@@ -26,7 +26,7 @@ pub fn format_duration(d: Duration) -> String {
     }
 }
 
-pub fn print_response(resp: ureq::Response, req: &RequestBlock, elapsed: Duration) {
+pub fn print_response(resp: ureq::Response, req: &RequestBlock, elapsed: Duration) -> String {
     let status = resp.status();
     let status_text = resp.status_text().to_string();
     let resp_version = resp.http_version().to_string();
@@ -83,6 +83,8 @@ pub fn print_response(resp: ureq::Response, req: &RequestBlock, elapsed: Duratio
         format_duration(elapsed),
         RESET
     );
+
+    body
 }
 
 #[cfg(test)]

@@ -39,5 +39,5 @@ fn run(cli: &Cli) -> Result<(), RunError> {
 
     let block = parse::find_request_block(&content, cli.line)?;
     let request = parse::parse_request(&block)?;
-    exec::execute_request(&request)
+    exec::execute_request(&request, &cli.file)
 }

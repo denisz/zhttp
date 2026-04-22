@@ -1,6 +1,7 @@
 ### GET a post
 GET https://jsonplaceholder.typicode.com/posts/1
 Accept: application/json
+X-file: response.json
 
 ###
 
